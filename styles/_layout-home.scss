@@ -1,0 +1,115 @@
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: $silver;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: absolute;
+    min-width: 320px;
+    padding: 0 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    font-family: $codefont;
+    font-size: 1rem;
+    color: $red;
+    p {
+      padding-left: 5px;
+    }
+    &:before {
+      content: "[";
+      left: 5;
+    }
+
+    &:after {
+      content: "]";
+      position: absolute;
+      right: 5;
+    }
+
+    &:after,
+    &:before {
+      position: absolute;
+      top: 0;
+      color: $blue;
+      font-size: 1.9rem;
+      line-height: 1.3rem;
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  ul {
+    height: 30px;
+    overflow: hidden;
+    li {
+      list-style-type: none;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      animation-name: swap;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes swap {
+  0%,
+  12.66%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  18.66%,
+  29.32% {
+    transform: translate3d(0, -100%, 0);
+  }
+  36.32%,
+  48.98% {
+    transform: translate3d(0, -200%, 0);
+  }
+  52.98%,
+  72.64% {
+    transform: translate3d(0, -100%, 0);
+  }
+  86.64%,
+  99.3% {
+    transform: translate3d(0, -0%, 0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    div {
+      min-width: 650px;
+      font-size: 2rem;
+      &:after,
+      &:before {
+        font-size: 3rem;
+        line-height: 2.8rem;
+      }
+      p {
+        margin-left: 10px;
+      }
+    }
+    ul {
+      height: 60px;
+      li {
+        padding-bottom: 50px;
+      }
+    }
+  }
+}

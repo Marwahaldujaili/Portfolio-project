@@ -1,0 +1,48 @@
+main {
+  @include main;
+  @include flexy;
+  flex-direction: column;
+  div:first-of-type {
+    width: 80%;
+    h4 {
+      font-family: $headings;
+      color: $blue;
+      margin: 15px 0;
+      text-align: center;
+    }
+  }
+  label {
+    font-family: $codefont;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    transition: all 0.3s;
+    border-bottom: 2px solid $grey;
+  }
+  input:focus,
+  textarea:focus {
+    border-bottom: 2px solid $red;
+  }
+
+  button {
+    font-family: $headings;
+    float: right;
+    padding: 8px 12px;
+    margin: 15px 0 0;
+    border: 2px solid $grey;
+    background: 0;
+    color: $blue;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  button:hover {
+    background: $red;
+    color: $silver;
+  }
+}
